@@ -1,0 +1,54 @@
+// nesse código vc vai encontrar uma forma de substituir um material deixando ele invisivel e deixando outro visivel de acordo com o que vc quer
+// vc pode trocar os objetos do seu personagem neste código, sinta-se a vontade
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+
+public class trocaobjeto : MonoBehaviour
+{
+    [SerializeField] public GameObject[] objeto1; // Referência
+    [SerializeField] private GameObject objeto2; // Referência 
+
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+
+    }
+
+    public void whenclicked()
+    {
+        bool isobjeto1Active = false;
+        foreach (GameObject obje in objeto)
+        {
+            if (retro.activeSelf)
+            {
+                isobjeto1Active = true;
+                break;
+            }
+        }
+        // Se estiver ativo, desative-o e ative o outro
+        if (isobjeto1Active)
+        {
+            foreach (GameObject retro in objeto1)
+            {
+                retro.SetActive(false);
+            }
+            objeto2.SetActive(true);
+        }
+        // Se estiver ativo, desative-o e ative o outro
+        else if (objeto2.activeSelf)
+        {
+           objeto2.SetActive(false);
+            foreach (GameObject retro in objeto1)
+            {
+                retro.SetActive(true);
+            }
+        }
+    }
+}
